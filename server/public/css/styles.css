@@ -1,0 +1,18 @@
+.popover-header {
+  background-color: var(--teal);
+}
+
+.settings-field {
+  display: none;
+}
+
+#generatedUrl {
+  word-wrap: break-word;
+}
+
+.urlSlugError {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  width: 85%;
+}

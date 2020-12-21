@@ -1,0 +1,18 @@
+{
+	"name": "urlshortener",
+	"version": "1.0.0",
+	"description": "A small url shortener project",
+	"main": "server.js",
+	"scripts": {
+		"start": "node .",
+		"dev": "nodemon ."
+	},
+	"author": "Derokero",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.17.1",
+		"helmet": "^4.2.0",
+		"mongodb": "^3.6.3",
+		"nanoid": "^3.1.20"
+	}
+}
