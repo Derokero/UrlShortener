@@ -5,8 +5,17 @@ const DBUtils = require("../utils/db");
 
 const {dbCollection} = require("../config/config");
 
+const browsers = ["firefox", "seamonkey", "chrome", "chromium", "safari", "opera", "opr", "msie", "trident"];
+
+function isBrowser(userAgent) {
+	return browsers.find((browser) => userAgent.toLowerCase().includes(browser));
+}
+
 router.get("/:id", async function (req, res) {
 	try {
+		const userAgent = req.header("User-Agent");
+		if (!isBrowser(userAgent)) return res.status(401).end(); // Prevent applications from consuming clicks on preview display
+
 		if (!req.params.id) return res.status(404).end();
 		const data = await DBUtils.findDocument(dbCollection, {urlSlug: req.params.id});
 
